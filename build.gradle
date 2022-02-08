@@ -36,6 +36,9 @@ dependencies {
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
 	implementation 'org.webjars:bootstrap:3.3.7-1'
 	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	testCompileOnly 'org.projectlombok:lombok'
 	testCompileOnly 'org.springframework.boot:spring-boot-starter-test'
 }
 
