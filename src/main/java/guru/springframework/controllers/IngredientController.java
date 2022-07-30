@@ -45,7 +45,7 @@ public class IngredientController {
     @GetMapping("recipe/{recipeId}/ingredient/{id}/show")
     public String showRecipeIngredient(@PathVariable String recipeId,
                                        @PathVariable String id, Model model){
-        model.addAttribute("ingredient", ingredientService.findByRecipeIdAndIngredientId(recipeId, id).block());
+        model.addAttribute("ingredient", ingredientService.findByRecipeIdAndIngredientId(recipeId, id));
         return "recipe/ingredient/show";
     }
 
@@ -93,7 +93,7 @@ public class IngredientController {
                                    @PathVariable String id){
 
         log.debug("deleting ingredient id:" + id);
-        ingredientService.deleteById(recipeId, id).block();
+        ingredientService.deleteById(recipeId, id);
 
         return "redirect:/recipe/" + recipeId + "/ingredients";
     }
